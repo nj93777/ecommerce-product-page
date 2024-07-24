@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <title>E-commerce product page</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="brand-title"><img src="./images/logo.svg" alt="" /></h1>
+      <nav>
+        <div class="overlay"></div>
+        <ul class="menu-links">
+          <span>
+            <img
+              id="close-menu-btn"
+              src="./images/icon-close.svg"
+              alt="Close Button"
+              class="menu-icon"
+            />
+          </span>
+
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <span>
+          <img
+            id="menu-btn"
+            src="./images/icon-menu.svg"
+            alt="Menu Button"
+            class="menu-icon"
+          />
+        </span>
+      </nav>
+
+      <div class="header-icons">
+        <button aria-label="Cart" class="cart-button">
+          <img src="./images/icon-cart.svg" alt="" />
+          <span class="cart-count">0</span>
+        </button>
+        <img
+          src="./images/image-avatar.png"
+          alt="User Avatar"
+          class="user-avatar"
+        />
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <article>
+          <img
+            src="./images/image-product-1.jpg"
+            alt="Sneakers"
+            class="product-image active"
+          />
+          <img
+            src="./images/image-product-2.jpg"
+            alt="Sneakers"
+            class="product-image"
+          />
+          <img
+            src="./images/image-product-3.jpg"
+            alt="Sneakers"
+            class="product-image"
+          />
+          <img
+            src="./images/image-product-4.jpg"
+            alt="Sneakers"
+            class="product-image"
+          />
+      
+          <section class="thumbnail-gallery">
+            <img
+              id="thumbnail-1"
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="Sneakers"
+              class="product-thumbnail active"
+            />
+            <img
+              id="thumbnail-2"
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="Sneakers"
+              class="product-thumbnail"
+            />
+            <img
+              id="thumbnail-3"
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="Sneakers"
+              class="product-thumbnail"
+            />
+            <img
+              id="thumbnail-4"
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="Sneakers"
+              class="product-thumbnail"
+            />
+          </section>
+        </article>
+
+
+
+        
+      </section>
+      
+      <aside>
+
+
+     
+
+        <section>
+          <div class="sneaker_companyt_text">
+            <p>SNEAKER COMPANY</p>
+            <h2 id="product-name">Fall Limited Edition Sneakers</h2>
+            <p>
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they'll withstand
+              everything the weather can offer.
+            </p>
+          </div>
+        </section>
+        <div class="price-container">
+          <div class="left-section">
+            <span class="current-price">$125.00</span>
+            <span class="discount-badge">50%</span>
+          </div>
+          <span class="original-price">$250.00</span>
+        </div>
+        <div class="quantity-cart-container">
+          <aside class="quantity-container">
+            <button class="quantity-button" id="minus-button">
+              <img src="./images/icon-minus.svg" id="minus" />
+            </button>
+            <span class="quantity" id="quantity">0</span>
+            <button class="quantity-button" id="plus-button">
+              <img src="./images/icon-plus.svg" id="plus" />
+            </button>
+          </aside>
+
+          <button id="ad">
+            <img
+              src="./images/icon-cart.svg"
+              class="cart-icon"
+              alt="Cart Icon"
+            />
+            <p>Add to cart</p>
+          </button>
+        </div>
+      </aside>
+    </main>
+
+    <div class="cart-container">
+      <h1>Cart</h1>
+      <p class="empty-cart">Your cart is empty</p>
+      <div class="cart-content"></div>
+      <button
+        id="checkout-button"
+        class="checkout-button"
+        style="display: none"
+      >
+        Checkout
+      </button>
+    </div>
+
+    <template id="cart-item-template">
+      <div class="cart-item">
+        <img src="" alt="" class="cart-item-image" />
+        <div class="cart-item-details">
+          <p class="cart-item-name"></p>
+          <p class="cart-item-prices">
+            <span class="item-price"></span> x
+            <span class="item-quantity"></span>
+            <span class="cart-item-total-price"></span>
+          </p>
+        </div>
+        <div class="img-delete">
+          <img src="./images/icon-delete.svg" alt="Delete" />
+        </div>
+      </div>
+    </template>
+  </body>
+</html>
