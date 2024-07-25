@@ -508,6 +508,14 @@ margin-bottom: 20px;
    
   }
 
+  .prev {
+    left: 20px;
+  }
+
+  .next {
+    right: 50px;
+  }
+
 }
 
 @media (min-width: 768px) {
