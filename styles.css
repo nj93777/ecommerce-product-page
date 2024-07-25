@@ -566,7 +566,7 @@ margin-bottom: 20px;
     }
   
     .menu-links a::after {
-      cocontent: '';
+     content: '';
       position: absolute;
       left: 0;
       bottom: -30px;
