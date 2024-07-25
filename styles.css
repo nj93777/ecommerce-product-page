@@ -484,8 +484,6 @@ margin-bottom: 20px;
     padding: 20px;
   }
 
- 
-
   article img {
     border-radius: 8%;
     max-width: 90%;
@@ -498,7 +496,6 @@ margin-bottom: 20px;
     gap: 10px; 
 
   }
-
 
   main section {
     flex: 1;
@@ -558,7 +555,6 @@ margin-bottom: 20px;
   .next {
     right: 80px;
   } 
-
 }
 
   @media (min-width: 900px) {
@@ -747,7 +743,7 @@ margin-bottom: 20px;
   max-height: 70%;
   margin-bottom: 20px;
   position: relative;
-  top: 5%;
+  top: 6%;
   border-radius: 10%;
 }
 
@@ -778,11 +774,14 @@ margin-bottom: 20px;
 .close-lightbox {
   position: absolute;
   top: 20px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
+  right: 25%;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  
+  }
+
+.close-lightbox:hover {
+  filter: brightness(0) saturate(100%) invert(66%) sepia(84%) saturate(2144%) hue-rotate(346deg) brightness(103%) contrast(101%);
 }
 
 .button {
