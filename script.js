@@ -227,11 +227,19 @@ document.addEventListener("DOMContentLoaded", function() {
   const lightboxMainImage = document.getElementById('lightbox-main-image');
   const lightboxThumbnails = document.querySelectorAll('.lightbox-product-thumbnail');
   const closeLightbox = document.querySelector('.close-lightbox');
+  const lightboxImages = [
+      './images/image-product-1.jpg',
+      './images/image-product-2.jpg',
+      './images/image-product-3.jpg',
+      './images/image-product-4.jpg'
+  ];
+  let currentLightboxIndex = 0;
 
   mainImage.addEventListener('click', function() {
       if (window.innerWidth >= 900) {
           lightbox.style.display = 'flex';
           lightboxMainImage.src = mainImage.src;
+          currentLightboxIndex = lightboxImages.indexOf(mainImage.src);
       }
   });
 
@@ -244,6 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
           lightboxThumbnails.forEach(img => img.classList.remove('active'));
           this.classList.add('active');
           lightboxMainImage.src = this.getAttribute('data-fullsize');
+          currentLightboxIndex = lightboxImages.indexOf(this.getAttribute('data-fullsize'));
       });
   });
 
@@ -252,7 +261,26 @@ document.addEventListener("DOMContentLoaded", function() {
           lightbox.style.display = 'none';
       }
   });
+
+  window.prevLightboxImage = function() {
+      currentLightboxIndex = (currentLightboxIndex === 0) ? lightboxImages.length - 1 : currentLightboxIndex - 1;
+      lightboxMainImage.src = lightboxImages[currentLightboxIndex];
+      updateLightboxThumbnails();
+  };
+
+  window.nextLightboxImage = function() {
+      currentLightboxIndex = (currentLightboxIndex === lightboxImages.length - 1) ? 0 : currentLightboxIndex + 1;
+      lightboxMainImage.src = lightboxImages[currentLightboxIndex];
+      updateLightboxThumbnails();
+  };
+
+  function updateLightboxThumbnails() {
+      lightboxThumbnails.forEach((thumbnail, index) => {
+          thumbnail.classList.toggle('active', lightboxImages[currentLightboxIndex] === thumbnail.getAttribute('data-fullsize'));
+      });
+  }
 });
+
 
 
 

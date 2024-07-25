@@ -728,6 +728,7 @@ margin-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 9999;
 }
 
@@ -741,6 +742,7 @@ margin-bottom: 20px;
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-direction: row;
 }
 
 .lightbox-product-thumbnail {
@@ -761,6 +763,25 @@ margin-bottom: 20px;
   height: 40px;
   cursor: pointer;
 }
+
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.prev {
+  left: 30%;
+}
+
+.next {
+  right: 30%;
+}
+
 
   }
   
