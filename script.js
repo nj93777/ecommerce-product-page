@@ -229,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const closeLightbox = document.querySelector('.close-lightbox');
   let currentLightboxIndex = 0;
 
-
   const lightboxImages = Array.from(lightboxThumbnails).map(thumbnail => thumbnail.getAttribute('data-fullsize'));
 
   mainImage.addEventListener('click', function() {
@@ -277,6 +276,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   }
 });
+
 
 
 
