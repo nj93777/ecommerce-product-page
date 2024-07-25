@@ -218,3 +218,41 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+// Lightbox
+
+document.addEventListener("DOMContentLoaded", function() {
+  const mainImage = document.getElementById('main-image');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxMainImage = document.getElementById('lightbox-main-image');
+  const lightboxThumbnails = document.querySelectorAll('.lightbox-product-thumbnail');
+  const closeLightbox = document.querySelector('.close-lightbox');
+
+  mainImage.addEventListener('click', function() {
+      if (window.innerWidth >= 900) {
+          lightbox.style.display = 'flex';
+          lightboxMainImage.src = mainImage.src;
+      }
+  });
+
+  closeLightbox.addEventListener('click', function() {
+      lightbox.style.display = 'none';
+  });
+
+  lightboxThumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function() {
+          lightboxThumbnails.forEach(img => img.classList.remove('active'));
+          this.classList.add('active');
+          lightboxMainImage.src = this.getAttribute('data-fullsize');
+      });
+  });
+
+  window.addEventListener('click', function(event) {
+      if (event.target === lightbox) {
+          lightbox.style.display = 'none';
+      }
+  });
+});
+
+
+
