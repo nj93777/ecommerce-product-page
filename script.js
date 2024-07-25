@@ -227,13 +227,10 @@ document.addEventListener("DOMContentLoaded", function() {
   const lightboxMainImage = document.getElementById('lightbox-main-image');
   const lightboxThumbnails = document.querySelectorAll('.lightbox-product-thumbnail');
   const closeLightbox = document.querySelector('.close-lightbox');
-  const lightboxImages = [
-      './images/image-product-1.jpg',
-      './images/image-product-2.jpg',
-      './images/image-product-3.jpg',
-      './images/image-product-4.jpg'
-  ];
   let currentLightboxIndex = 0;
+
+
+  const lightboxImages = Array.from(lightboxThumbnails).map(thumbnail => thumbnail.getAttribute('data-fullsize'));
 
   mainImage.addEventListener('click', function() {
       if (window.innerWidth >= 900) {
@@ -247,12 +244,12 @@ document.addEventListener("DOMContentLoaded", function() {
       lightbox.style.display = 'none';
   });
 
-  lightboxThumbnails.forEach(thumbnail => {
+  lightboxThumbnails.forEach((thumbnail, index) => {
       thumbnail.addEventListener('click', function() {
           lightboxThumbnails.forEach(img => img.classList.remove('active'));
           this.classList.add('active');
           lightboxMainImage.src = this.getAttribute('data-fullsize');
-          currentLightboxIndex = lightboxImages.indexOf(this.getAttribute('data-fullsize'));
+          currentLightboxIndex = index;
       });
   });
 
@@ -276,11 +273,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateLightboxThumbnails() {
       lightboxThumbnails.forEach((thumbnail, index) => {
-          thumbnail.classList.toggle('active', lightboxImages[currentLightboxIndex] === thumbnail.getAttribute('data-fullsize'));
+          thumbnail.classList.toggle('active', index === currentLightboxIndex);
       });
   }
 });
-
 
 
 
