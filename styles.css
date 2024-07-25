@@ -518,6 +518,20 @@ margin-bottom: 20px;
 
 }
 
+@media (min-width: 690px) {
+
+
+  .prev {
+    left: 30px;
+  }
+
+  .next {
+    right: 66px;
+  }
+
+
+}
+
 @media (min-width: 768px) {
 
 
@@ -527,6 +541,17 @@ margin-bottom: 20px;
     margin-left: 20px;
     height: 700px;
   }
+
+  .prev {
+    left: 40px;
+  }
+
+  .next {
+    right: 80px;
+  }
+
+
+  
 
 }
 
