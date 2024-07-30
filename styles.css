@@ -767,8 +767,7 @@ margin-bottom: 20px;
   max-height: 70%;
   margin-bottom: 20px;
   position: relative;
-  top: 6%;
-  border-radius: 10%;
+  border-radius: 5%;
 }
 
 .lightbox-thumbnail-gallery {
@@ -776,6 +775,7 @@ margin-bottom: 20px;
   justify-content: center;
   gap: 30px;
   flex-direction: row;
+  
  
 }
 
@@ -784,6 +784,7 @@ margin-bottom: 20px;
   height: 80px;
   cursor: pointer;
   border-radius: 5%;
+  
 }
 
 .lightbox-product-thumbnail:hover{
@@ -821,11 +822,13 @@ margin-bottom: 20px;
 }
 
 .prev {
-  left: 30%;
+  top: 42%;
+  left: 31%;
 }
 
 .next {
-  right: 30%;
+  top: 42%;
+  right: 31%;
 }
 
 .button img {
